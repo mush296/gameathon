@@ -14,6 +14,17 @@ public class GameController : MonoBehaviour
     public Transform answersContainer;
     public GameObject answerPrefab;
 
+    public Transform cameraTransform;
+
+    public Vector3 babyCamPos;
+    public Quaternion babyCamRot;
+    public Vector3 doctorCamPos;
+    public Quaternion doctorCamRot;
+    public Vector3 nurseCamPos;
+    public Quaternion nurseCamRot;
+    public Vector3 roomCamPos;
+    public Quaternion roomCamRot;
+
     private float timer = 0;
     private int score = 0;
 
@@ -139,5 +150,27 @@ public class GameController : MonoBehaviour
         index = 0;
         timer = 0;
         started = false;
+    }
+
+    public void LookAtBaby()
+    {
+        cameraTransform.position = babyCamPos;
+        cameraTransform.rotation = babyCamRot;
+    }
+
+    public void LookAtDoctor()
+    {
+        cameraTransform.position = doctorCamPos;
+        cameraTransform.rotation = doctorCamRot;
+    }
+    public void LookAtNurse()
+    {
+        cameraTransform.position = nurseCamPos;
+        cameraTransform.rotation = nurseCamRot;
+    }
+    public void LookAtAll()
+    {
+        cameraTransform.position = roomCamPos;
+        cameraTransform.rotation = roomCamRot;
     }
 }
